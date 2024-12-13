@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create rating cache outbox
+      author: Cefer Mehtiyev
+      changes:
+        - createTable:
+            tableName: rating_cache_out_box
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: product_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vote_count
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+              - column:
+                  name: average_rating
+                  type: DECIMAL(3, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: processed
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

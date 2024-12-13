@@ -1,0 +1,30 @@
+server:
+  port: 2222
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:1115/ratings_db
+    username: postgres
+    password: j@vacefer2005
+  jpa:
+    open-in-view: true
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yaml
+
+redis:
+  server:
+    urls: redis://localhost:6380
+client:
+  urls:
+    ms-auth: http://localhost:1113
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+queue:
+  ratingQ: RATING_Q
+
+
+
